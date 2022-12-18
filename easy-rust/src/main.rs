@@ -3,5 +3,7 @@ fn main() {
     /* inside comment */
     println!("Hello, world!");
 
-    let x = 10;
+    let a :u8 = 100;
+    let b = 50;
+    let c = a + b;
 }
