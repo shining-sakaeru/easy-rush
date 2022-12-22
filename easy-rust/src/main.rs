@@ -39,6 +39,19 @@ fn main() {
     //let my_age = 36;
     println!("My name is {} and my age is {}", my_name, give_age());
 
+    // string interpolation
+
+    // expression
+    // 1 + 5
+
+    let city = "Seoul";
+    let year = 2002;
+    let population = 9_987_987;
+    println!(
+        "The city of {city} in {year} had a population of {population}. I love {city}!"
+
+
+    );
 
 
 
