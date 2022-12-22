@@ -47,13 +47,18 @@ fn main() {
     let city = "Seoul";
     let year = 2002;
     let population = 9_987_987;
-    println!(
-        "The city of {city} in {year} had a population of {population}. I love {city}!"
+    println!("The city of {city} in {year} had a population of {population}. I love {city}!");
 
+    // () - empty tuple, unit type (void)
+    // expression-base language
+    fn empty_tuple() {
 
-    );
+    }
 
-
+    // Display {}
+    // Debug print
+    let tuple = empty_tuple();
+    println!("{:?}",tuple);
 
 
 }
