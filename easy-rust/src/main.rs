@@ -153,16 +153,24 @@ exist"
     let ref_two = &country;
 
     println!("Country is: {}", ref_one);
-
+    /*
     fn return_it() -> &'static String {
         let country = String::from("대한민국");
         &country  // return &String
     }
 
     let my_country = return_it();
+    */
 
+    // & immutable reference / shared reference
+    // &mut mutable reference / unique reference
 
+    let mut my_number = 9;
+    let num_ref = &mut my_number;
 
+    *num_ref = 10;
+    
+    println!("Number is now {}", my_number);
 
 
 
