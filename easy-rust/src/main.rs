@@ -128,5 +128,35 @@ exist"
     println!("Length {} capa {}", my_name.len(), my_name.capacity());
     my_name.push('a');
     println!("Length {} capa {}", my_name.len(), my_name.capacity());
+
+    // const
+    // static
+    const HIGH_SCORE: i32 = 20;  // global scopei
+    static mut LOW_SCORE: i32 = 0;  // unsafe
+    // 'static lifetime
+
+
+    fn print_high_score() {
+        println!("The high score is {}", HIGH_SCORE);
+    }
+
+    print_high_score();
+
+    let my_name = "Noah"; // &'static str
+    unsafe {LOW_SCORE = 1};  // 비추천 다른방법 찾아보자
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
     
