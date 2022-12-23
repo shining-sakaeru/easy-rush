@@ -87,6 +87,26 @@ fn main() {
     }
     println!("{}", my_variable);
 
+    // fancy printing
+    println!(r#"C:\mydrive"#);
+    println!(
+"many
+stories
+exist"
+    );
+
+    let p_variable = &9;
+    println!("{:p}", p_variable);
+    let h_variable = 9000;
+    println!("{:X}", h_variable);
+    let b_variable = 9000;
+    println!("{:b}", b_variable);
+
+    let title = "Today's news";
+    println!("{:-^30}", title);  // formatting
+    
+
+
 
 
 
