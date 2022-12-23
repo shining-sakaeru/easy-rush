@@ -172,7 +172,11 @@ exist"
     
     println!("Number is now {}", my_number);
 
-
+    // shadowing
+    let country = "Korean";
+    let country_ref = &country;
+    let country = 8;
+    println!("{}, {}", country_ref, country);
 
 
 }
