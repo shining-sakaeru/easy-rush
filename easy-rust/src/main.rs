@@ -1,4 +1,4 @@
-use std::mem::size_of;
+use std::{mem::size_of};
 
 fn main() {
     // one line comment
@@ -105,7 +105,13 @@ exist"
     let title = "Today's news";
     println!("{:-^30}", title);  // formatting
     
-
+    // string and &str
+    let my_name = "Noah".to_string(); // string
+    let other_name = String::from("Noah2");
+    // growable + shrinkable
+    let mut my_other_name = "Noah3".to_string();
+    my_other_name.push('!');
+    println!("{}", my_other_name);
 
 
 
