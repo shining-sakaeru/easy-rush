@@ -145,12 +145,21 @@ exist"
     let my_name = "Noah"; // &'static str
     unsafe {LOW_SCORE = 1};  // 비추천 다른방법 찾아보자
 
+    // ownership - 소유권
+    // & = reference
 
+    let country = String::from("대한민국");
+    let ref_one = &country;
+    let ref_two = &country;
 
+    println!("Country is: {}", ref_one);
 
+    fn return_it() -> &'static String {
+        let country = String::from("대한민국");
+        &country  // return &String
+    }
 
-
-
+    let my_country = return_it();
 
 
 
