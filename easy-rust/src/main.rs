@@ -73,5 +73,23 @@ fn main() {
     let my_number = give_number(9, 1);
     println!("{}", my_number);
 
+    // mutability
+    // shadowing
+
+    let mut _my_number = 10;
+    _my_number = 9;
+
+    let my_variable = 10;
+    println!("{}", my_variable);
+    {
+        let my_variable = "My variable";
+        println!("{}", my_variable);  // only use in code blocks
+    }
+    println!("{}", my_variable);
+
+
+
+
+
 }
     
