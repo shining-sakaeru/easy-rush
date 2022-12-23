@@ -113,9 +113,20 @@ exist"
     my_other_name.push('!');
     println!("{}", my_other_name);
 
-
-
-
-
+    // string method
+        // .capacity
+        // .push
+        // .push_str
+        // .pop
+        // with_capacity
+        // allocation
+    let mut my_name =  String::with_capacity(26);
+    println!("Length {} capa {}", my_name.len(), my_name.capacity());
+    my_name.push_str("Noah!");
+    println!("Length {} capa {}", my_name.len(), my_name.capacity());
+    my_name.push_str(" and I live in Seoul ");
+    println!("Length {} capa {}", my_name.len(), my_name.capacity());
+    my_name.push('a');
+    println!("Length {} capa {}", my_name.len(), my_name.capacity());
 }
     
