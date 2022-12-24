@@ -368,8 +368,26 @@ exist"
 
     println!("The second number is: {}", second_number);
 
+    // Match statements
+    let sky = "cloudy";  // &str
+    let temperature = "warm";
+
+    match (sky, temperature) {
+        ("cloudy", "cold") => println!("It's note very nice"),
+        ("clear", "warm") => println!("It's quite good"),
+        ("cloudy", _) => println!("Cloudy and something else"),
+        _ => println!("Not sure for today")
+    }
 
 
+    let children = 5;
+    let married = true;
+    
+    match (children, married) {
+        (children, married) if married == false => println!("Not married with {} children", children),
+        (c, m) if c == 0 && m => println!("Married but with no children"),
+        _ => println!("Something other")
+    }
 
 
 
