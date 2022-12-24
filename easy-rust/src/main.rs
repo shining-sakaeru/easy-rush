@@ -308,5 +308,41 @@ exist"
 
     let my_vec3 = Vec::from([8,9,10]); // [i32; 3]
 
+    // tuples
+    // Vec<String>
+
+    let my_tuple = ("Noah", 8, vec![8, 9, 10], 'b', [8, 9, 10], 7.7);
+    println!(
+        "
+        First item: {}
+        Second item: {}
+        Third item: {:?}
+        Fourth item: {}
+        Fifth item: {:?}
+        Sixth item: {}
+        ",
+        my_tuple.0,
+        my_tuple.1,
+        my_tuple.2,
+        my_tuple.3,
+        my_tuple.4,
+        my_tuple.5,
+    );
+
+    // Vec<(&str, i32)>
+    // Destructuring
+    // Structure
+
+    let my_vec = vec![("Hey", 9), ("Hello", 23)];
+
+    let str_tuple = ("one", "two", "three");
+    let (a, b, c) = str_tuple;
+    println!("Item is: {}", a);
+ 
+    let str_array = ["one", "two", "three"];
+    let [a, b, c] = str_array;
+    println!("Item is: {}", a);
+
+
 }
     
