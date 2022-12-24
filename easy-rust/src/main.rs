@@ -8,11 +8,11 @@ fn main() {
     //integer
     let a :u8 = 100;
     let b = 50;
-    let c = a + b;
+    let _c = a + b;
 
     //char and string
-    let my_number: u16 = 8;
-    let second_number: u8 = 10;
+    let _my_number: u16 = 8;
+    let _second_number: u8 = 10;
     //let third_number = my_number + second_number as u16; // simple casting
 
     println!("Size of a char: {} bytes", size_of::<char>());
@@ -106,8 +106,8 @@ exist"
     println!("{:-^30}", title);  // formatting
     
     // string and &str
-    let my_name = "Noah".to_string(); // string
-    let other_name = String::from("Noah2");
+    let _my_name = "Noah".to_string(); // string
+    let _other_name = String::from("Noah2");
     // growable + shrinkable
     let mut my_other_name = "Noah3".to_string();
     my_other_name.push('!');
@@ -142,7 +142,7 @@ exist"
 
     print_high_score();
 
-    let my_name = "Noah"; // &'static str
+    let _my_name = "Noah"; // &'static str
     unsafe {LOW_SCORE = 1};  // 비추천 다른방법 찾아보자
 
     // ownership - 소유권
@@ -150,7 +150,7 @@ exist"
 
     let country = String::from("대한민국");
     let ref_one = &country;
-    let ref_two = &country;
+    let _ref_two = &country;
 
     println!("Country is: {}", ref_one);
     /*
@@ -301,12 +301,12 @@ exist"
     // trait = 초능력
 
     // From, Into
-    let my_name = String::from("Noah");
+    let _my_name = String::from("Noah");
     let my_city: String = "Seoul".into();
 
     println!("{}", my_city);
 
-    let my_vec3 = Vec::from([8,9,10]); // [i32; 3]
+    let _my_vec3 = Vec::from([8,9,10]); // [i32; 3]
 
     // tuples
     // Vec<String>
@@ -333,15 +333,46 @@ exist"
     // Destructuring
     // Structure
 
-    let my_vec = vec![("Hey", 9), ("Hello", 23)];
+    let _my_vec = vec![("Hey", 9), ("Hello", 23)];
 
     let str_tuple = ("one", "two", "three");
-    let (a, b, c) = str_tuple;
+    let (a, _b, _c) = str_tuple;
     println!("Item is: {}", a);
  
     let str_array = ["one", "two", "three"];
-    let [a, b, c] = str_array;
+    let [a, _b, _c] = str_array;
     println!("Item is: {}", a);
+
+    // Control flow
+
+    let my_number = 5;
+    let my_second_number = 10;
+    if my_number == 5 && my_second_number == 10 {
+        println!("It's same");
+    } else if my_number == 6 {
+        println!("It's six");        
+    } else {
+        println!("It's a diff. number");
+    }
+
+    // rust style
+    // expression-based language
+    let my_number: u8 = 5;
+
+    let second_number = match my_number {
+        0 => 23,
+        1 => 65,
+        5 => 99,
+        _ => 0 // _ "I don't care"
+    };
+
+    println!("The second number is: {}", second_number);
+
+
+
+
+
+
 
 
 }
