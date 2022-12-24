@@ -178,6 +178,24 @@ exist"
     let country = 8;
     println!("{}, {}", country_ref, country);
 
+    // OWNERSHIP
+    // move semantics
+    fn print_country(country_name: &String){
+        println!("My country is {}", country_name);
+    }
+
+    let country = "Korean".to_string();
+    print_country(&country);
+    print_country(&country);
+    print_country(&country);
+
+
+
+
+
+
+
+
 
 }
     
