@@ -298,10 +298,15 @@ exist"
     let my_vec2 = vec![name1, name2];  // vec! macro
     println!("My cats are {:?}", my_vec2);  // :? = debug print
 
+    // trait = 초능력
 
+    // From, Into
+    let my_name = String::from("Noah");
+    let my_city: String = "Seoul".into();
 
+    println!("{}", my_city);
 
-
+    let my_vec3 = Vec::from([8,9,10]); // [i32; 3]
 
 }
     
