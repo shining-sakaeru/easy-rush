@@ -189,9 +189,24 @@ exist"
     print_country(&country);
     print_country(&country);
 
+    // mutable references and mut in functions
+    fn add_is_great(country_name: &mut String){
+        country_name.push_str(" is great");
+        println!("Now it says: {}", country_name);
+    }
 
+    let mut my_country = "Korean".to_string();
+    add_is_great(&mut my_country);  // by mutable reference
+    add_is_great(&mut my_country);  // by mutable reference
 
+    fn add_is_great2(mut country_name: String) -> String {  // take by value, declare as mutable
+        country_name.push_str(" is great");
+        println!("Now it says: {}", country_name);
+        country_name
+    }
 
+    let my_country2 = "Korean".to_string();
+    add_is_great2(my_country2);
 
 
 
