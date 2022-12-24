@@ -279,6 +279,28 @@ exist"
     println!("{:?}", &seasons[..]);
     println!("{:?}", &seasons[..=4]);
 
+    // Vec = Vector
+    // Vec<String>
+    // Vec<u8>
+    // T = some type
+    let name1 = String::from("WIndy");
+    let name2 = String::from("Gomesy");
+    
+    let mut my_vec = Vec::new();
+    println!("Space for my_vec: {}", my_vec.capacity());
+    my_vec.push(name1.clone());
+    println!("Space for my_vec: {}", my_vec.capacity());
+    my_vec.push(name2.clone());
+    println!("Space for my_vec: {}", my_vec.capacity());
+
+    println!("My cats are {:?}", my_vec);  // :? = debug print
+
+    let my_vec2 = vec![name1, name2];  // vec! macro
+    println!("My cats are {:?}", my_vec2);  // :? = debug print
+
+
+
+
 
 
 }
