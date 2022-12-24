@@ -229,5 +229,37 @@ exist"
     prints_string(my_country.clone());
     prints_string(my_country);
 
+    // uninitialzed variable
+    // control flow
+
+    // possibly uninitialized = maybe doesn't have a value yet    
+
+    fn loop_then_return(mut counter: i32) -> i32 {
+        loop {
+            counter += 1;
+            if counter % 50 == 0 {
+                break;
+            }
+        }
+        counter
+    }
+
+    let my_number;
+
+    {
+        // 복잡한 것들
+        let x = loop_then_return(43);
+        my_number = x
+    }
+
+    println!("{}", my_number);
+
+
+
+
+
+
+
+
 }
     
