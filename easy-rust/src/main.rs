@@ -254,8 +254,19 @@ exist"
 
     println!("{}", my_number);
 
+    // Collection types
+    // Array
 
-
+    // buffer
+    let array = ["One", "Two"];
+    let array2 = ["One", "Twoos"];
+    let array3 = [0; 5];
+    println!("Is array the same as array2? {}", array == array2);
+    // array.ffwewf();   type 확인가능
+    println!("{:?}", array3);
+    println!("{:?}", array2[1]);
+    println!("{:?}", array2.get(3));
+    // Some None Option enum
 
 
 
