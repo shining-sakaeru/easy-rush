@@ -438,11 +438,14 @@ exist"
     struct Colour(u8, u8, u8);
 
     // named struct
+    use std::mem::size_of_val;
+
     #[derive(Debug)]  // attribute
     struct Country {
         population: u32,
         capital: String,
-        leader_name: String
+        leader_name: String,
+        all_populations: [u32; 5500]
     }
 
 
@@ -456,17 +459,49 @@ exist"
     let my_colour = Colour(20, 50, 100);
     println!("The second colour is {}", my_colour.1);
     println!("The second colour is {:?}", my_colour);
-
-    let canada = Country {
+    /*    let canada = Country {
         population: 35_000_000,
         capital: "Ottawa".to_string(),
-        leader_name: "Justin Trudearu".to_string()
+        leader_name: "Justin Trudearu".to_string(),
+        all_populations: [5499; 5500]
     };
+    
 
     println!("The population is: {}\nThe capital is: {}", canada.population, canada.capital);
 
     println!("The country is: {:#?}", canada);
+    */
+
+    let population = 35_000_000;
+    let capital = "Otawwa".to_string();
+    let leader_name = "Justin".to_string();
 
 
+    let my_country = Country {
+        population,
+        capital,
+        leader_name,
+        all_populations: [5490; 5500]
+    };
+
+    println!("Country is {} bytes in size", size_of_val(&my_country));
+
+    struct Numbers {
+        one: u8,
+        two: u8,
+        three: u8,
+        four: u32
+    }
+
+    let numbers = Numbers {
+        one: 8,
+        two: 19,
+        three: 20,
+        four: 30
+    };
+
+    println!("Size is: {}", size_of_val(&numbers));
+    println!("Size is: {}", size_of_val(&my_country));
+    
 }
     
