@@ -676,5 +676,45 @@ exist"
     };
 
     println!("my_number is now: {}", counter);
+
+    // impl blocks
+
+    #[derive(Debug)]
+    struct Animal {
+        age: u8,
+        animal_type: AnimalType
+    }
+    
+    #[derive(Debug)]
+    enum AnimalType {
+        Cat,
+        Dog
+    }
+
+    impl Animal {
+        fn new_cat(age: u8) -> Self {  // Self = Animal
+            
+            Self {
+                age,
+                animal_type: AnimalType::Cat
+            }
+        }
+    }
+
+    let my_animal = Animal::new_cat(10); 
+
+    println!("I made a: {:?}", my_animal);
+
+
+
+
+
+
+
+
+
+
+
+
 }
     
