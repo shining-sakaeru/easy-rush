@@ -687,64 +687,95 @@ exist"
     
     #[derive(Debug)]
     enum AnimalType {
-        Cat,
-        Dog
+        Cat(String),
+        Dog(String)
+    }
+
+    impl AnimalType {
+        fn print_name(&self) {
+            use AnimalType::*;
+
+            match self {
+                Cat(name) => println!("Cat name is: {}",name),
+                Dog(name) => println!("Dog name is: {}", name),
+            }
+        }
     }
 
     impl Animal {  // impl 여러개 생성 가능
-        fn new_old_cat() -> Self {
-            Self {
-                age: 15,
-                animal_type: AnimalType::Cat
-            }
-        }
-    }
+        // fn new_old_cat() -> Self {
+        //     Self {
+        //         age: 15,
+        //         animal_type: AnimalType::Cat(String)
+        //     }
+        // }
 
-    impl Animal {
-        fn new_cat(age: u8) -> Self {  // Self = Animal
-            
+        fn new(age: u8, animal_type: AnimalType) -> Self {
             Self {
                 age,
-                animal_type: AnimalType::Cat
+                animal_type,
             }
         }
+
+        // fn  check_type(&self) {
+
+        //     match self.animal_type {
+        //         Cat => println!("Animal type is cat"),
+        //         Dog => println!("Animal type is dog"),
+        //     }
+            
+        // }
+
+    }
+
+    // impl Animal {
+    //     fn new_cat(age: u8) -> Self {  // Self = Animal
+            
+    //         Self {
+    //             age,
+    //             animal_type: AnimalType::Cat(String)
+    //         }
+    //     }
         
-        fn new_dog(age: u8) -> Self {  // Self = Animal
+    //     fn new_dog(age: u8) -> Self {  // Self = Animal
             
-            Self {
-                age,
-                animal_type: AnimalType::Dog
-            }
-        }
+    //         Self {
+    //             age,
+    //             animal_type: AnimalType::Dog(String)
+    //         }
+    //     }
 
-        fn print(&self) {
-            println!("I am a: {:?}", self);
-        }
+    //     fn print(&self) {
+    //         println!("I am a: {:?}", self);
+    //     }
 
-        fn change_to_dog(&mut self) {
-            self.animal_type = AnimalType::Dog;
-            println!("Changed to dog! Now I am: {:?}", self);
-        }
+    //     fn change_to_dog(&mut self) {
+    //         self.animal_type = AnimalType::Dog();
+    //         println!("Changed to dog! Now I am: {:?}", self);
+    //     }
 
-        fn change_to_cat(&mut self) {
-            self.animal_type = AnimalType::Cat;
-            println!("Changed to cat! Now I am: {:?}", self);
-        }
+    //     fn change_to_cat(&mut self) {
+    //         self.animal_type = AnimalType::Cat();
+    //         println!("Changed to cat! Now I am: {:?}", self);
+    //     }
 
-    }
+    // }
 
-    let mut my_animal = Animal::new_dog(10); 
+    // let mut my_animal = Animal::new_dog(10); 
     //println!("I made a: {:?}", my_animal);
-    my_animal.print();  // syntactic sugar
+    // my_animal.print();  // syntactic sugar
     //Animal::print(&my_animal);  // 위와 동일
-    my_animal.change_to_cat();
-    my_animal.change_to_dog();
+    // my_animal.change_to_cat();
+    // my_animal.change_to_dog();
     
-    let my_old_cat = Animal::new_old_cat();
+    // let my_old_cat = Animal::new_old_cat();
 
+    use AnimalType::*;
+    let my_cat = Animal::new(10, AnimalType::Cat("Windy".to_string()));
+    let my_dog = Animal::new(10, Dog("Doggy".to_string()));
 
-
-
+    // my_cat.check_type();
+    my_cat.animal_type.print_name();  // enum
 
 
 
