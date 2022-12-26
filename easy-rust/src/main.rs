@@ -1,4 +1,4 @@
-use core::num;
+// use core::num;
 use std::{mem::size_of};
 
 fn main() {
@@ -642,6 +642,7 @@ exist"
         if counter > 9 {
             println!("Entering second loop");
 
+            #[warn(unused_labels)]
             'second_loop: loop {
                 println!("The second counter is: {}", counter2);
                 counter2 += 1;
@@ -776,6 +777,56 @@ exist"
 
     // my_cat.check_type();
     my_cat.animal_type.print_name();  // enum
+
+    
+
+    // More destructuring
+    struct Person {
+        name: String,
+        real_name: String,
+        height: u8,
+        happiness: bool
+    }
+
+    #[derive(Debug)]
+    struct Person2 {
+        name: String,
+        height: u8
+    }
+
+    impl Person2 {
+        fn from_person(input: Person) -> Self {
+            let Person {name, height, ..} = input;
+
+            Self {
+                name,
+                height
+            }
+        }
+    }
+
+    let papa_doc = Person {
+        name: "Papa Doc".to_string(),
+        real_name: "Clarence".to_string(),
+        height: 170,
+        happiness: false
+    };
+
+    // let Person {
+    //     name:a,
+    //     real_name:b,
+    //     height:c,
+    //     happiness:d
+    // } = papa_doc;
+
+    // println!("{} {} {} {}", a, b, c, d);
+
+    let person2 = Person2::from_person(papa_doc);
+
+    println!("Person2 type is: {:?}", person2);
+
+
+
 
 
 
