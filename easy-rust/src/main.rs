@@ -534,6 +534,66 @@ exist"
     check_skystate(&sky_state);
     check_skystate(&create_skystate(12));
 
+    // enums 2
+    enum Mood {
+        Happy,
+        Sleepy,
+        NotBad,
+        Angry
+    }
+
+    fn match_mood(mood: &Mood) -> i32 {
+        use Mood::*;  // pointer
+        let happiness_level = match mood {
+            Happy => 10,
+            Sleepy => 6,
+            NotBad => 7,
+            Angry => 2,        
+        };
+        happiness_level
+    }
+    
+    // same with upper function
+    fn match_mood2(mood: &Mood) -> i32 {
+        use Mood::*;  // pointer
+        
+        match mood {
+            Happy => 10,
+            Sleepy => 6,
+            NotBad => 7,
+            Angry => 2,        
+        }
+    }
+
+    let my_mood = Mood::NotBad;
+    let happiness_level = match_mood(&my_mood);
+    println!("Out of 1 to 10, my happiness is {}", happiness_level);
+
+    let my_mood2 = Mood::Happy;
+    let happiness_level2 = match_mood(&my_mood2);
+    println!("Out of 1 to 10, my happiness is {}", happiness_level2);
+
+    enum Season {
+        Spring,  // 0
+        Summer,
+        Autumn,
+        Winter
+    }
+
+    use Season::*;
+    let four_seasons = vec![Spring, Summer, Autumn, Winter];  // Vec<Season>
+    for season in four_seasons {
+        println!("The number is: {}", season as u32);
+    }
+
+
+
+
+
+
+
+
+
 
 
 
