@@ -652,10 +652,29 @@ exist"
         }
     }
 
+    // while
+    let mut counter = 0;
 
+    while counter != 5 {
+        counter += 1;
+        println!("The counter is now: {}", counter);
+    }
 
+    // for
+    for number in 0..3 {  // .. exclusive range, ..= inclusive range
+        println!("The number is {}", number);
+    }
 
+    // break
+    let mut counter = 5;
 
+    let my_number = loop {
+        counter += 1;
+        if counter % 53 == 3 {
+            break counter;
+        }
+    };
 
+    println!("my_number is now: {}", counter);
 }
     
