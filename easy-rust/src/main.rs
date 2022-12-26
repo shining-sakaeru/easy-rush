@@ -503,5 +503,40 @@ exist"
     println!("Size is: {}", size_of_val(&numbers));
     println!("Size is: {}", size_of_val(&my_country));
     
+    // enum = enumeration
+    // e = from + number
+
+    // struct = and
+    // enum = or
+    
+    enum ThingsInTheSky {
+        Sun,  // 0
+        Stars,  // 1
+    }
+
+    fn create_skystate(time: i32) -> ThingsInTheSky {
+        match time {
+            6..=18 => ThingsInTheSky::Sun,
+            _ => ThingsInTheSky::Stars
+        }
+    }
+
+    fn check_skystate(state: &ThingsInTheSky) {
+        match state {
+            ThingsInTheSky::Sun => println!("I can see the sun"),
+            ThingsInTheSky::Stars => println!("I can see the stars"),
+            
+        }
+    }
+
+    let time = 20;
+    let sky_state = create_skystate(time);
+    check_skystate(&sky_state);
+    check_skystate(&create_skystate(12));
+
+
+
+
+
 }
     
