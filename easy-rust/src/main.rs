@@ -847,6 +847,29 @@ exist"
     item.compare_number(10);  // Rust는 자동 Deref 해줌
     reference_item.compare_number(10);
     other_reference_item.compare_number(10);
+    
+    // Generics
+    struct Book;
+
+    use std::fmt::Display;
+
+    fn give_thing<T: Display>(input: T) -> T {  // T
+        println!("{}", input);  // Display
+        input
+    }
+
+    let x = give_thing(String::from("Take this thing"));
+    let y = give_thing(9);
+    // let z = give_thing(Book);
+    println!("{}", x);
+    println!("{}", y);
+
+
+
+
+
+
+
 
 }
     
