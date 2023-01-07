@@ -901,12 +901,33 @@ exist"
         println!("I got a number: {}", index1.unwrap());
     }
     
-    index2.expect("Needed at least five items");
+    // index2.expect("Needed at least five items");
     
-    
-    
-    
-    
-    
-    
+    // More Option
+    fn check_error(input: i32) -> Result<(), ()> {
+        if input % 2 == 0 {
+            Ok(())
+        } else {
+            Err(())
+        }
     }
+    
+    // .is_ok()
+    // .is_err()
+    // enum Result<T, E> {
+    //  Ok(T),
+    //  Err(E),
+    //}
+    
+    if check_error(5).is_ok() {
+        println!("Okay!")
+    } else {
+        println!("Error!!")
+    }
+
+    match check_error(5) {
+        Ok(_) => println!("Okay"),
+        Err(_) => println!("Error")
+    }
+
+}
