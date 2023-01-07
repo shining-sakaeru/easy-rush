@@ -883,16 +883,25 @@ exist"
     }
         // wrap in an Option
 
-        let new_vec1 = vec![1, 2, 4, 7, 8, 10, 10];
-        let index1 = take_fifth(new_vec1);
-        println!("{:?}", index1);
-        let new_vec2 = vec![1, 2, 4, 7];
-        let index2 = take_fifth(new_vec2);
-        println!("{:?}", index2);
+    let new_vec1 = vec![1, 2, 4, 7, 8, 10, 10];
+    let index1 = take_fifth(new_vec1);
+    println!("{:?}", index1);
+    let new_vec2 = vec![1, 2, 4, 7];
+    let index2 = take_fifth(new_vec2);
+    println!("{:?}", index2);
     
+    match index1 {
+        Some(number) => println!("I got a number: {}", number),
+        None => println!("There was nothing inside"),
+    }
+
+    // Some(number)
+    if index1.is_some() { // bool
+    // Option<i32>
+        println!("I got a number: {}", index1.unwrap());
+    }
     
-    
-    
+    index2.expect("Needed at least five items");
     
     
     
