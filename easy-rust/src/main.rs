@@ -872,15 +872,32 @@ exist"
 
     compare_and_print("Listen up!", 9, 8);
 
+    //Option<T>
 
+    fn take_fifth(value: Vec<i32>) -> Option<i32> {
+        if value.len() < 5 {
+            None
+        } else {
+            Some(value[4]) // i32
+        }
+    }
+        // wrap in an Option
 
-
-
-
-
-
-
-
-
-
-}
+        let new_vec1 = vec![1, 2, 4, 7, 8, 10, 10];
+        let index1 = take_fifth(new_vec1);
+        println!("{:?}", index1);
+        let new_vec2 = vec![1, 2, 4, 7];
+        let index2 = take_fifth(new_vec2);
+        println!("{:?}", index2);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
