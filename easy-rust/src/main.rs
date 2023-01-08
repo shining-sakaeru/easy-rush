@@ -1,8 +1,11 @@
+use core::num;
+// use core::num::dec2flt::number;
 // use core::num;
 use std::mem::size_of;
 
 use std::cmp::PartialOrd;
 use std::fmt::Display;
+use std::result;
 
 
 fn main() {
@@ -904,6 +907,7 @@ exist"
     // index2.expect("Needed at least five items");
     
     // More Option
+    // Result
     fn check_error(input: i32) -> Result<(), ()> {
         if input % 2 == 0 {
             Ok(())
@@ -929,5 +933,45 @@ exist"
         Ok(_) => println!("Okay"),
         Err(_) => println!("Error")
     }
+
+    fn check_if_five(number: i32) -> Result<i32, String> {
+        match number {
+            5 => Ok(number),
+            _ => Err("Sorry, the number wasn't five.".to_string())
+        }
+    }
+
+    let mut result_vec = Vec::new(); // Vec<Result<i32, String>>
+
+    for number in 2..=7 {
+        result_vec.push(check_if_five(number));
+    }
+
+    println!("{:#?}", result_vec); // {:#?} = pretty print
+
+    
+    // parse
+    // anyhow - crate : 사용자 지정 error
+    fn parse_number(number: &str) -> Result<i32, std::num::ParseIntError> {
+        number.parse()
+    }
+
+    let mut result_vec = vec![];
+    result_vec.push(parse_number("8"));
+    result_vec.push(parse_number("tnfwe"));
+    result_vec.push(parse_number("8"));
+
+    for number in result_vec {
+        println!("{:?}", number);
+    }
+
+
+
+
+
+
+
+
+
 
 }
