@@ -11,6 +11,7 @@
 // use std::fmt::Display;
 // // use std::result;
 
+use std::collections::HashMap; // This is so we can just write HashMap instead of std::collections::HashMap every time
 
 fn main() {
     // one line comment
@@ -971,30 +972,57 @@ fn main() {
 
 
     // 050 If let and while let
-    let my_vec = vec![2, 3, 4];
+    // let my_vec = vec![2, 3, 4];
 
-    for index in 0..10 {
-      if let Some(number) = my_vec.get(index) {
-        println!("The number is: {}", number);
-      }
+    // for index in 0..10 {
+    //   if let Some(number) = my_vec.get(index) {
+    //     println!("The number is: {}", number);
+    //   }
+    // }
+
+    // let weather_vec = vec![
+    //     vec!["Berlin", "cloudy", "5", "-7", "78"],
+    //     vec!["Athens", "sunny", "not humid", "20", "10", "50"],
+    // ];
+    // for mut city in weather_vec {
+    //     println!("For the city of {}:", city[0]); // In our data, every first item is the city name
+    //     while let Some(information) = city.pop() {
+    //         // This means: keep going until you can't pop anymore
+    //         // When the vector reaches 0 items, it will return None
+    //         // and it will stop.
+    //         if let Ok(number) = information.parse::<i32>() {
+    //             // Try to parse the variable we called information
+    //             // This returns a result. If it's Ok(number), it will print it
+    //             println!("The number is: {}", number);
+    //         }  // We don't write anything here because we do nothing if we get an error. Throw them all away
+    //     }
+    // }
+    
+    // 051 HashMap and BTreeMap
+    // HashMap <-> BTreeMap (ordering)
+    struct City {
+        name: String,
+        population: HashMap<u32, u32>, // This will have the year and the population for the year
     }
 
-    let weather_vec = vec![
-        vec!["Berlin", "cloudy", "5", "-7", "78"],
-        vec!["Athens", "sunny", "not humid", "20", "10", "50"],
-    ];
-    for mut city in weather_vec {
-        println!("For the city of {}:", city[0]); // In our data, every first item is the city name
-        while let Some(information) = city.pop() {
-            // This means: keep going until you can't pop anymore
-            // When the vector reaches 0 items, it will return None
-            // and it will stop.
-            if let Ok(number) = information.parse::<i32>() {
-                // Try to parse the variable we called information
-                // This returns a result. If it's Ok(number), it will print it
-                println!("The number is: {}", number);
-            }  // We don't write anything here because we do nothing if we get an error. Throw them all away
-        }
+    let mut tallinn = City {
+        name: "Tallinn".to_string(),
+        population: HashMap::new(), // So far the HashMap is empty
+    };
+
+    tallinn.population.insert(1372, 3_250); // insert three dates
+    tallinn.population.insert(1851, 24_000);
+    tallinn.population.insert(2020, 437_619);
+
+
+    for (year, population) in tallinn.population { // The HashMap is HashMap<u32, u32> so it returns a two items each time
+        println!("In the year {} the city of {} had a population of {}.", year, tallinn.name, population);
     }
+
+
+
+
+
+
 
 }
