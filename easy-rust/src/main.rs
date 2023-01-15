@@ -1,11 +1,11 @@
-use core::num;
+// use core::num;
 // use core::num::dec2flt::number;
 // use core::num;
 use std::mem::size_of;
 
 use std::cmp::PartialOrd;
 use std::fmt::Display;
-use std::result;
+// use std::result;
 
 
 fn main() {
@@ -636,47 +636,47 @@ exist"
     let mut counter = 0;
     let mut counter2 = 0;
 
-    'first_loop: loop {
-        // ' tick
-        counter += 1;
-        println!("The counter is now: {}", counter);
-        if counter > 9 {
-            println!("Entering second loop");
+    // 'first_loop: loop {
+    //     // ' tick
+    //     counter += 1;
+    //     println!("The counter is now: {}", counter);
+    //     if counter > 9 {
+    //         println!("Entering second loop");
 
-            #[warn(unused_labels)]
-            'second_loop: loop {
-                println!("The second counter is: {}", counter2);
-                counter2 += 1;
-                if counter2 == 3 {
-                    break 'first_loop;
-                }
-            }
-        }
+            // #[warn(unused_labels)]
+        //     'second_loop: loop {
+        //         println!("The second counter is: {}", counter2);
+        //         counter2 += 1;
+        //         if counter2 == 3 {
+        //             break 'first_loop;
+        //         }
+        //     }
+        // }
     }
 
-    // while
-    let mut counter = 0;
+    // // while
+    // let mut counter = 0;
 
-    while counter != 5 {
-        counter += 1;
-        println!("The counter is now: {}", counter);
-    }
+    // while counter != 5 {
+    //     counter += 1;
+    //     println!("The counter is now: {}", counter);
+    // }
 
-    // for
-    for number in 0..3 {
-        // .. exclusive range, ..= inclusive range
-        println!("The number is {}", number);
-    }
+    // // for
+    // for number in 0..3 {
+    //     // .. exclusive range, ..= inclusive range
+    //     println!("The number is {}", number);
+    // }
 
-    // break
-    let mut counter = 5;
+    // // break
+    // let mut counter = 5;
 
-    let my_number = loop {
-        counter += 1;
-        if counter % 53 == 3 {
-            break counter;
-        }
-    };
+    // let my_number = loop {
+    //     counter += 1;
+    //     if counter % 53 == 3 {
+    //         break counter;
+    //     }
+    // };
 
     println!("my_number is now: {}", counter);
 
@@ -770,12 +770,12 @@ exist"
 
     // let my_old_cat = Animal::new_old_cat();
 
-    use AnimalType::*;
-    let my_cat = Animal::new(10, AnimalType::Cat("Windy".to_string()));
-    let my_dog = Animal::new(10, Dog("Doggy".to_string()));
+    // use AnimalType::*;
+    // let my_cat = Animal::new(10, AnimalType::Cat("Windy".to_string()));
+    // let my_dog = Animal::new(10, Dog("Doggy".to_string()));
 
-    // my_cat.check_type();
-    my_cat.animal_type.print_name(); // enum
+    // // my_cat.check_type();
+    // my_cat.animal_type.print_name(); // enum
 
     // More destructuring
     struct Person {
@@ -799,12 +799,12 @@ exist"
         }
     }
 
-    let papa_doc = Person {
-        name: "Papa Doc".to_string(),
-        real_name: "Clarence".to_string(),
-        height: 170,
-        happiness: false,
-    };
+    // let papa_doc = Person {
+    //     name: "Papa Doc".to_string(),
+    //     real_name: "Clarence".to_string(),
+    //     height: 170,
+    //     happiness: false,
+    // };
 
     // let Person {
     //     name:a,
@@ -815,9 +815,9 @@ exist"
 
     // println!("{} {} {} {}", a, b, c, d);
 
-    let person2 = Person2::from_person(papa_doc);
+    // let person2 = Person2::from_person(papa_doc);
 
-    println!("Person2 type is: {:?}", person2);
+    // println!("Person2 type is: {:?}", person2);
 
     // Dereferencing and the dot operator
     struct Item {
@@ -831,19 +831,19 @@ exist"
         }
     }
 
-    let item = Item { number: 10 };
+    // let item = Item { number: 10 };
 
-    let reference_item = &item;
-    let other_reference_item = &reference_item; // &&item
+    // let reference_item = &item;
+    // let other_reference_item = &reference_item; // &&item
 
-    item.compare_number(10); // Rust는 자동 Deref 해줌
-    reference_item.compare_number(10);
-    other_reference_item.compare_number(10);
+    // item.compare_number(10); // Rust는 자동 Deref 해줌
+    // reference_item.compare_number(10);
+    // other_reference_item.compare_number(10);
 
     // Generics
     struct Book;
 
-    use std::fmt::Display;
+    // use std::fmt::Display;
 
     fn give_thing<T: Display>(input: T) -> T {
         // T
@@ -851,9 +851,9 @@ exist"
         input
     }
 
-    let x = give_thing(String::from("Take this thing"));
-    let y = give_thing(9);
-    // let z = give_thing(Book);
+    // let x = give_thing(String::from("Take this thing"));
+    // let y = give_thing(9);
+    // // let z = give_thing(Book);
     println!("{}", x);
     println!("{}", y);
 
@@ -873,7 +873,7 @@ exist"
         );
     }
 
-    compare_and_print("Listen up!", 9, 8);
+    // compare_and_print("Listen up!", 9, 8);
 
     //Option<T>
 
@@ -886,23 +886,23 @@ exist"
     }
         // wrap in an Option
 
-    let new_vec1 = vec![1, 2, 4, 7, 8, 10, 10];
-    let index1 = take_fifth(new_vec1);
-    println!("{:?}", index1);
-    let new_vec2 = vec![1, 2, 4, 7];
-    let index2 = take_fifth(new_vec2);
-    println!("{:?}", index2);
+    // let new_vec1 = vec![1, 2, 4, 7, 8, 10, 10];
+    // let index1 = take_fifth(new_vec1);
+    // println!("{:?}", index1);
+    // let new_vec2 = vec![1, 2, 4, 7];
+    // let index2 = take_fifth(new_vec2);
+    // println!("{:?}", index2);
     
-    match index1 {
-        Some(number) => println!("I got a number: {}", number),
-        None => println!("There was nothing inside"),
-    }
+    // match index1 {
+    //     Some(number) => println!("I got a number: {}", number),
+    //     None => println!("There was nothing inside"),
+    // }
 
-    // Some(number)
-    if index1.is_some() { // bool
-    // Option<i32>
-        println!("I got a number: {}", index1.unwrap());
-    }
+    // // Some(number)
+    // if index1.is_some() { // bool
+    // // Option<i32>
+    //     println!("I got a number: {}", index1.unwrap());
+    // }
     
     // index2.expect("Needed at least five items");
     
@@ -923,16 +923,16 @@ exist"
     //  Err(E),
     //}
     
-    if check_error(5).is_ok() {
-        println!("Okay!")
-    } else {
-        println!("Error!!")
-    }
+    // if check_error(5).is_ok() {
+    //     println!("Okay!")
+    // } else {
+    //     println!("Error!!")
+    // }
 
-    match check_error(5) {
-        Ok(_) => println!("Okay"),
-        Err(_) => println!("Error")
-    }
+    // match check_error(5) {
+    //     Ok(_) => println!("Okay"),
+    //     Err(_) => println!("Error")
+    // }
 
     fn check_if_five(number: i32) -> Result<i32, String> {
         match number {
@@ -941,11 +941,11 @@ exist"
         }
     }
 
-    let mut result_vec = Vec::new(); // Vec<Result<i32, String>>
+    // let mut result_vec = Vec::new(); // Vec<Result<i32, String>>
 
-    for number in 2..=7 {
-        result_vec.push(check_if_five(number));
-    }
+    // for number in 2..=7 {
+    //     result_vec.push(check_if_five(number));
+    // }
 
     println!("{:#?}", result_vec); // {:#?} = pretty print
 
@@ -956,22 +956,15 @@ exist"
         number.parse()
     }
 
-    let mut result_vec = vec![];
-    result_vec.push(parse_number("8"));
-    result_vec.push(parse_number("tnfwe"));
-    result_vec.push(parse_number("8"));
+    // let mut result_vec = vec![];
+    // result_vec.push(parse_number("8"));
+    // result_vec.push(parse_number("tnfwe"));
+    // result_vec.push(parse_number("8"));
 
-    for number in result_vec {
-        println!("{:?}", number);
+    // for number in result_vec {
+    //     println!("{:?}", number);
+    // }
+
+
+    // 050 If let and while let
     }
-
-
-
-
-
-
-
-
-
-
-}
