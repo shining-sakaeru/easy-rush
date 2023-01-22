@@ -11,9 +11,9 @@
 // use std::fmt::Display;
 // // use std::result;
 
-use std::collections::HashMap; // This is so we can just write HashMap instead of std::collections::HashMap every time
+// use std::collections::HashMap; // This is so we can just write HashMap instead of std::collections::HashMap every time
 
-fn main() {
+// fn main() {
     // one line comment
     /* inside comment */
 //     println!("Hello, world!");
@@ -1000,29 +1000,38 @@ fn main() {
     
     // 051 HashMap and BTreeMap
     // HashMap <-> BTreeMap (ordering)
-    struct City {
-        name: String,
-        population: HashMap<u32, u32>, // This will have the year and the population for the year
+//     struct City {
+//         name: String,
+//         population: HashMap<u32, u32>, // This will have the year and the population for the year
+//     }
+
+//     let mut tallinn = City {
+//         name: "Tallinn".to_string(),
+//         population: HashMap::new(), // So far the HashMap is empty
+//     };
+
+//     tallinn.population.insert(1372, 3_250); // insert three dates
+//     tallinn.population.insert(1851, 24_000);
+//     tallinn.population.insert(2020, 437_619);
+
+
+//     for (year, population) in tallinn.population { // The HashMap is HashMap<u32, u32> so it returns a two items each time
+//         println!("In the year {} the city of {} had a population of {}.", year, tallinn.name, population);
+//     }
+// }
+
+
+use std::collections::HashMap;
+
+fn main() {
+    let book_collection = vec!["L'Allemagne Moderne", "Le Petit Prince", "Eye of the World", "Eye of the World"]; // Eye of the World appears twice
+
+    let mut book_hashmap = HashMap::new();
+
+    for book in book_collection {
+        book_hashmap.entry(book).or_insert(true);
     }
-
-    let mut tallinn = City {
-        name: "Tallinn".to_string(),
-        population: HashMap::new(), // So far the HashMap is empty
-    };
-
-    tallinn.population.insert(1372, 3_250); // insert three dates
-    tallinn.population.insert(1851, 24_000);
-    tallinn.population.insert(2020, 437_619);
-
-
-    for (year, population) in tallinn.population { // The HashMap is HashMap<u32, u32> so it returns a two items each time
-        println!("In the year {} the city of {} had a population of {}.", year, tallinn.name, population);
+    for (book, true_or_false) in book_hashmap {
+        println!("Do we have {}? {}", book, true_or_false);
     }
-
-
-
-
-
-
-
 }
